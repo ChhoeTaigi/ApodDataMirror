@@ -1,0 +1,965 @@
+{
+ "version": "20261010-143253",
+ "source": "https://apod.tw/",
+ "counts": {
+  "articles_sitemap": 1511,
+  "articles_listing": 1511,
+  "listing_pages": 7,
+  "articles": 1511,
+  "articles_fetched": 1511,
+  "articles_missing": 0,
+  "articles_with_table": 1511,
+  "tables_expected_headers": 1511,
+  "articles_titles_incomplete": 7,
+  "rows": 13587,
+  "rows_distinct_poj": 4943,
+  "rows_distinct_hanlo": 4091,
+  "rows_PojUnicode": 13581,
+  "rows_PojInput": 13581,
+  "rows_KipUnicode": 13575,
+  "rows_KipInput": 13575,
+  "rows_HanLoTaibunPoj": 13587,
+  "rows_HoaBun": 13582,
+  "rows_EngBun": 13578,
+  "rows_LaigoanBangchi": 13587,
+  "rows_empty_cells": 29,
+  "rows_not_poj": 9,
+  "rows_not_kpl": 74,
+  "rows_caron": 1,
+  "articles_rows": 1511,
+  "articles_no_heading": 0,
+  "articles_no_table": 0,
+  "articles_empty_table": 0,
+  "articles_multi_tone": 0,
+  "rows_multi_tone": 0,
+  "rows_blank_skipped": 0,
+  "tables_other_headers": 0,
+  "rows_cell_count_mismatch": 0
+ },
+ "articles": {
+  "sitemap_only": [],
+  "listing_only": [],
+  "missing": [],
+  "no_heading": [],
+  "no_table": [],
+  "empty_table": [],
+  "titles_incomplete": [
+   {
+    "date": "20210604",
+    "missing": [
+     "EngBun"
+    ]
+   },
+   {
+    "date": "20220211",
+    "missing": [
+     "KipUnicode"
+    ]
+   },
+   {
+    "date": "20220829",
+    "missing": [
+     "KipUnicode"
+    ]
+   },
+   {
+    "date": "20230331",
+    "missing": [
+     "KipUnicode"
+    ]
+   },
+   {
+    "date": "20240527",
+    "missing": [
+     "HanLoTaibunPoj"
+    ]
+   },
+   {
+    "date": "20240730",
+    "missing": [
+     "PojUnicode"
+    ]
+   },
+   {
+    "date": "20250729",
+    "missing": [
+     "PojUnicode"
+    ]
+   }
+  ],
+  "date_mismatch": []
+ },
+ "tables": {
+  "other_headers": [],
+  "cell_count_mismatch": []
+ },
+ "rows": {
+  "empty_cells": [
+   {
+    "date": "20210719",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "半人馬座 Alpha 星",
+    "PojUnicode": "Poàn-jîn-má-chō",
+    "KipUnicode": "Puàn-jîn-má-tsō"
+   },
+   {
+    "date": "20210807",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "毅力號探測車",
+    "PojUnicode": "Gē-le̍k-hō thàm-chhek-chhia",
+    "KipUnicode": "Gē-li̍k-hō thàm-tshik-tshia"
+   },
+   {
+    "date": "20211211",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "BICEP 望遠鏡",
+    "PojUnicode": "BICEP bōng-oán-kiàⁿ",
+    "KipUnicode": "BICEP bōng-uán-kiànn"
+   },
+   {
+    "date": "20211224",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "電磁波頻譜",
+    "PojUnicode": "tiān-chû-pho pîn-phó͘",
+    "KipUnicode": "tiān-tsû-pho pîn-phóo"
+   },
+   {
+    "date": "20220108",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "北極星",
+    "PojUnicode": "Pak-ke̍k-chhiⁿ",
+    "KipUnicode": "Pak-ki̍k-tshinn"
+   },
+   {
+    "date": "20220205",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "哈伯太空望遠鏡",
+    "PojUnicode": "Ha-peh Thài-khong-bōng-oán-kiàⁿ",
+    "KipUnicode": "Ha-peh Thài-khong-bōng-uán-kiànn"
+   },
+   {
+    "date": "20220331",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "地面望遠鏡",
+    "PojUnicode": "tē-bīn-bōng-oán-kiàⁿ",
+    "KipUnicode": "tē-bīn-bōng-uán-kiànn"
+   },
+   {
+    "date": "20220925",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "M16",
+    "PojUnicode": "M cha̍p-la̍k",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20230402",
+    "empty": [
+     "PojUnicode"
+    ],
+    "HanLoTaibunPoj": "觀星者",
+    "PojUnicode": "",
+    "KipUnicode": "kuan-sing-tsiá"
+   },
+   {
+    "date": "20230616",
+    "empty": [
+     "PojUnicode",
+     "KipUnicode",
+     "HoaBun"
+    ],
+    "HanLoTaibunPoj": "Baltic 海",
+    "PojUnicode": "",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20230909",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "長蛇座 Sigma 流星雨",
+    "PojUnicode": "Tn̂g-Siâ-chō Sigma Liû-chheⁿ-hō͘",
+    "KipUnicode": "Tn̂g-Siâ-tsō Sigma Liû-tshenn-hōo"
+   },
+   {
+    "date": "20231027",
+    "empty": [
+     "PojUnicode"
+    ],
+    "HanLoTaibunPoj": "Encke 彗星",
+    "PojUnicode": "",
+    "KipUnicode": "Encke Hui-tshenn"
+   },
+   {
+    "date": "20231118",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "獵戶座太空船",
+    "PojUnicode": "La̍h-hō͘-chō Thài-khong-chûn",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20240106",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "彗星 67P",
+    "PojUnicode": "hūi-chheⁿ 67P",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20240111",
+    "empty": [
+     "EngBun"
+    ],
+    "HanLoTaibunPoj": "北極星",
+    "PojUnicode": "Pak-ke̍k-chhiⁿ",
+    "KipUnicode": "Pak-ki̍k-tshinn"
+   },
+   {
+    "date": "20240118",
+    "empty": [
+     "PojUnicode"
+    ],
+    "HanLoTaibunPoj": "海拔",
+    "PojUnicode": "",
+    "KipUnicode": "hái-pua̍t"
+   },
+   {
+    "date": "20240118",
+    "empty": [
+     "HoaBun"
+    ],
+    "HanLoTaibunPoj": "捲螺仔星系",
+    "PojUnicode": "kńg-lê-á seng-hē",
+    "KipUnicode": "kńg-lê-á sing-hē"
+   },
+   {
+    "date": "20240202",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "肚胿仔",
+    "PojUnicode": "tō͘-koai-á",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20240211",
+    "empty": [
+     "HoaBun"
+    ],
+    "HanLoTaibunPoj": "Atlantis 號太空梭",
+    "PojUnicode": "Atlantis hō thài-khong-so",
+    "KipUnicode": "Atlantis hō thài-khong-so"
+   },
+   {
+    "date": "20240217",
+    "empty": [
+     "PojUnicode"
+    ],
+    "HanLoTaibunPoj": "頂層大氣",
+    "PojUnicode": "",
+    "KipUnicode": "tíng-tsàn tāi-khì"
+   },
+   {
+    "date": "20240311",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "藍色目屎",
+    "PojUnicode": "Nâ-sek Ba̍k-sái",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20240603",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "NGC 2403",
+    "PojUnicode": "NGC jī-sù-khòng-sam",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20240709",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "極地中氣層雲",
+    "PojUnicode": "Ke̍k-tē Tiong-khì-chân hûn",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20240718",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "小人馬座恆星雲",
+    "PojUnicode": "Sió Jîn-má-chō Hêng-chhiⁿ-hûn",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20240912",
+    "empty": [
+     "PojUnicode",
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "獨立行星",
+    "PojUnicode": "",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20250818",
+    "empty": [
+     "HoaBun"
+    ],
+    "HanLoTaibunPoj": "塗粉帶",
+    "PojUnicode": "thô͘-hún-tòa",
+    "KipUnicode": "thôo-hún-tuà"
+   },
+   {
+    "date": "20250823",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "月圓",
+    "PojUnicode": "goe̍h-îⁿ",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20250823",
+    "empty": [
+     "KipUnicode"
+    ],
+    "HanLoTaibunPoj": "直徑",
+    "PojUnicode": "ti̍t-kèng",
+    "KipUnicode": ""
+   },
+   {
+    "date": "20250911",
+    "empty": [
+     "HoaBun"
+    ],
+    "HanLoTaibunPoj": "月全食",
+    "PojUnicode": "goe̍h-choân-si̍t",
+    "KipUnicode": "gue̍h-tsuân-si̍t"
+   }
+  ],
+  "not_poj": [
+   {
+    "date": "20210829",
+    "text": "Siang Sió-kiânn-tshinn Tiông-sin-tīng-hiòng Tshik-giām",
+    "pieces": [
+     "kiânn"
+    ]
+   },
+   {
+    "date": "20211214",
+    "text": "HH lio̍k-lio̍k柱-lio̍k thian-thé",
+    "pieces": [
+     "lio̍k柱"
+    ]
+   },
+   {
+    "date": "20221017",
+    "text": "hok-siā-suànn",
+    "pieces": [
+     "suànn"
+    ]
+   },
+   {
+    "date": "20230603",
+    "text": "hū-phìnn",
+    "pieces": [
+     "phìnn"
+    ]
+   },
+   {
+    "date": "20231110",
+    "text": "Gio̍k-hu-tsō",
+    "pieces": [
+     "tsō"
+    ]
+   },
+   {
+    "date": "20250721",
+    "text": "Uí-peh Thài-khong Bōng-uán-kiànn",
+    "pieces": [
+     "kiànn"
+    ]
+   },
+   {
+    "date": "20250721",
+    "text": "hun-tsú hûn",
+    "pieces": [
+     "tsú"
+    ]
+   },
+   {
+    "date": "20250922",
+    "text": "pak-puànn-kiû",
+    "pieces": [
+     "puànn"
+    ]
+   },
+   {
+    "date": "20250922",
+    "text": "lâm-puànn-kiû",
+    "pieces": [
+     "puànn"
+    ]
+   }
+  ],
+  "not_kpl": [
+   {
+    "date": "20210117",
+    "text": "tiān-chiunn phùn-lâu",
+    "pieces": [
+     "chiunn"
+    ]
+   },
+   {
+    "date": "20210210",
+    "text": "sī-bāng-mo̍͘h",
+    "pieces": [
+     "mo̍͘h"
+    ]
+   },
+   {
+    "date": "20210211",
+    "text": "Thian-gô-chō",
+    "pieces": [
+     "chō"
+    ]
+   },
+   {
+    "date": "20210311",
+    "text": "sing-tsè-thô͘-hún-lia̍p",
+    "pieces": [
+     "thô͘"
+    ]
+   },
+   {
+    "date": "20210423",
+    "text": "Kok-chè-thài-khong-chām",
+    "pieces": [
+     "chè",
+     "chām"
+    ]
+   },
+   {
+    "date": "20210512",
+    "text": "kiânn-tshinn-kan thô͘-hún-lia̍p",
+    "pieces": [
+     "thô͘"
+    ]
+   },
+   {
+    "date": "20210524",
+    "text": "iûnn-á kiânn-tshiⁿ",
+    "pieces": [
+     "tshiⁿ"
+    ]
+   },
+   {
+    "date": "20210606",
+    "text": "lji̍t-tsuân-si̍t",
+    "pieces": [
+     "lji̍t"
+    ]
+   },
+   {
+    "date": "20210609",
+    "text": "Tshiau-kip hue-hueh-gue̍he",
+    "pieces": [
+     "gue̍he"
+    ]
+   },
+   {
+    "date": "20210718",
+    "text": "tn̂g-tu-îⁿ sing-hē",
+    "pieces": [
+     "îⁿ"
+    ]
+   },
+   {
+    "date": "20210721",
+    "text": "sng-sò͘",
+    "pieces": [
+     "sò͘"
+    ]
+   },
+   {
+    "date": "20211006",
+    "text": "Chhiâ-ko-hîng sing-thuân",
+    "pieces": [
+     "Chhiâ"
+    ]
+   },
+   {
+    "date": "20211006",
+    "text": "Chhiâ-to-hîng sing-thuân",
+    "pieces": [
+     "Chhiâ"
+    ]
+   },
+   {
+    "date": "20220602",
+    "text": "thàu-chá-chhiⁿ",
+    "pieces": [
+     "chá"
+    ]
+   },
+   {
+    "date": "20220610",
+    "text": "Sik-lú-chō",
+    "pieces": [
+     "chō"
+    ]
+   },
+   {
+    "date": "20220614",
+    "text": "kē kuí-tō se̍h-tē-uī-chhiⁿâ",
+    "pieces": [
+     "chhiⁿâ"
+    ]
+   },
+   {
+    "date": "20220708",
+    "text": "hî-gán-kiàⁿ-thâu",
+    "pieces": [
+     "kiàⁿ"
+    ]
+   },
+   {
+    "date": "20220723",
+    "text": "Lêng-chēng-hái",
+    "pieces": [
+     "chēng"
+    ]
+   },
+   {
+    "date": "20220814",
+    "text": "bî-tiōng-le̍k thàu-kiàⁿ-hāu-èng",
+    "pieces": [
+     "kiàⁿ"
+    ]
+   },
+   {
+    "date": "20220816",
+    "text": "Ing-sian-tsō liû-tshinn-hō͘lta Lâm Liû-tshinn-hōo",
+    "pieces": [
+     "hō͘lta"
+    ]
+   },
+   {
+    "date": "20220827",
+    "text": "IC ngô͘-it-sù-lio̍k",
+    "pieces": [
+     "ngô͘"
+    ]
+   },
+   {
+    "date": "20220908",
+    "text": "Thê-ô͘-seng-hûn",
+    "pieces": [
+     "ô͘"
+    ]
+   },
+   {
+    "date": "20220908",
+    "text": "sàng-sò͘",
+    "pieces": [
+     "sò͘"
+    ]
+   },
+   {
+    "date": "20220921",
+    "text": "seng-chè-thô͘-hún-hûn",
+    "pieces": [
+     "chè",
+     "thô͘"
+    ]
+   },
+   {
+    "date": "20220921",
+    "text": "La̍h-hō͘-chō Sigma",
+    "pieces": [
+     "hō͘",
+     "chō"
+    ]
+   },
+   {
+    "date": "20220929",
+    "text": "Khin-hîng I-tà-lī Sió-kiânn-tshinn Sîng-siōng Li̍p-hong-Uē-tshnn",
+    "pieces": [
+     "tshnn"
+    ]
+   },
+   {
+    "date": "20221001",
+    "text": "goe̍h-îⁿ",
+    "pieces": [
+     "îⁿ"
+    ]
+   },
+   {
+    "date": "20221006",
+    "text": "seng-hē-phōaⁿ",
+    "pieces": [
+     "phōaⁿ"
+    ]
+   },
+   {
+    "date": "20221009",
+    "text": "lia̍p-chú",
+    "pieces": [
+     "chú"
+    ]
+   },
+   {
+    "date": "20221102",
+    "text": "ji̍t-jíⁿ",
+    "pieces": [
+     "jíⁿ"
+    ]
+   },
+   {
+    "date": "20221105",
+    "text": "BICEP Bōng-oán-kiàⁿ",
+    "pieces": [
+     "kiàⁿ"
+    ]
+   },
+   {
+    "date": "20221107",
+    "text": "Kok-chè Ōaⁿ-ji̍t-sòaⁿ",
+    "pieces": [
+     "chè",
+     "Ōaⁿ",
+     "sòaⁿ"
+    ]
+   },
+   {
+    "date": "20221112",
+    "text": "goe̍h-choân-si̍t",
+    "pieces": [
+     "choân"
+    ]
+   },
+   {
+    "date": "20221118",
+    "text": "guân-hîng-tshinn puânnd",
+    "pieces": [
+     "puânnd"
+    ]
+   },
+   {
+    "date": "20221121",
+    "text": "chí-gōa-kng",
+    "pieces": [
+     "chí"
+    ]
+   },
+   {
+    "date": "20221230",
+    "text": "sī-sòaⁿMessier sì-tsa̍p-gōo",
+    "pieces": [
+     "sòaⁿMessier"
+    ]
+   },
+   {
+    "date": "20230118",
+    "text": "James Webb Thài-khong bōng-oán-kiàⁿ",
+    "pieces": [
+     "kiàⁿ"
+    ]
+   },
+   {
+    "date": "20230202",
+    "text": "guân-chú",
+    "pieces": [
+     "chú"
+    ]
+   },
+   {
+    "date": "20230425",
+    "text": "chit-chú",
+    "pieces": [
+     "chú"
+    ]
+   },
+   {
+    "date": "20230503",
+    "text": "Sū-kiāⁿ-sī-kài Bōng-oán-kiàⁿ",
+    "pieces": [
+     "kiāⁿ",
+     "kiàⁿ"
+    ]
+   },
+   {
+    "date": "20230505",
+    "text": "bín-kám-tō͘",
+    "pieces": [
+     "tō͘"
+    ]
+   },
+   {
+    "date": "20230622",
+    "text": "hun-chú-hûn hok-ha̍p-thé",
+    "pieces": [
+     "chú"
+    ]
+   },
+   {
+    "date": "20230629",
+    "text": "tiōng-li̍k-photiōng-li̍k-pho",
+    "pieces": [
+     "photiōng"
+    ]
+   },
+   {
+    "date": "20231009",
+    "text": "lji̍t-tsuân-si̍t",
+    "pieces": [
+     "lji̍t"
+    ]
+   },
+   {
+    "date": "20231020",
+    "text": "NGC sù-jī-ngó͘-pat",
+    "pieces": [
+     "ngó͘"
+    ]
+   },
+   {
+    "date": "20231026",
+    "text": "thô͘-hún-lia̍p",
+    "pieces": [
+     "thô͘"
+    ]
+   },
+   {
+    "date": "20231110",
+    "text": "hoat-siā-sòaⁿ",
+    "pieces": [
+     "sòaⁿ"
+    ]
+   },
+   {
+    "date": "20231112",
+    "text": "gue̍h-îⁿ",
+    "pieces": [
+     "îⁿ"
+    ]
+   },
+   {
+    "date": "20231127",
+    "text": "hun-chú-hûn",
+    "pieces": [
+     "chú"
+    ]
+   },
+   {
+    "date": "20231212",
+    "text": "Sian-lú-chō Seng-hē",
+    "pieces": [
+     "chō"
+    ]
+   },
+   {
+    "date": "20231220",
+    "text": "thài-iông-hô͘",
+    "pieces": [
+     "hô͘"
+    ]
+   },
+   {
+    "date": "20240102",
+    "text": "hóe-chìⁿ",
+    "pieces": [
+     "chìⁿ"
+    ]
+   },
+   {
+    "date": "20240124",
+    "text": "La̍h-hō͘-chō ke-khì-lâng thài-khong-tsûn",
+    "pieces": [
+     "hō͘",
+     "chō"
+    ]
+   },
+   {
+    "date": "20240416",
+    "text": "chìn-pho",
+    "pieces": [
+     "chìn"
+    ]
+   },
+   {
+    "date": "20240425",
+    "text": "La̍h-hō͘-tsō Sing-hûn",
+    "pieces": [
+     "hō͘"
+    ]
+   },
+   {
+    "date": "20240426",
+    "text": "Sai-á-chō it",
+    "pieces": [
+     "chō"
+    ]
+   },
+   {
+    "date": "20240503",
+    "text": "Chuí-tshenn",
+    "pieces": [
+     "Chuí"
+    ]
+   },
+   {
+    "date": "20240506",
+    "text": "ji̍t-choân-si̍t",
+    "pieces": [
+     "choân"
+    ]
+   },
+   {
+    "date": "20240511",
+    "text": "ji̍t-chuân-si̍t",
+    "pieces": [
+     "chuân"
+    ]
+   },
+   {
+    "date": "20240604",
+    "text": "lī-chú bóe-liu",
+    "pieces": [
+     "chú"
+    ]
+   },
+   {
+    "date": "20240624",
+    "text": "JADES GS z cha̍p-sì chi khòng",
+    "pieces": [
+     "cha̍p"
+    ]
+   },
+   {
+    "date": "20240624",
+    "text": "âng-î z tíg-î tsa̍p-sì tiám sam-jī",
+    "pieces": [
+     "tíg"
+    ]
+   },
+   {
+    "date": "20240720",
+    "text": "Lêng-chēng-hái",
+    "pieces": [
+     "chēng"
+    ]
+   },
+   {
+    "date": "20240723",
+    "text": "kńg-lê-á-chn̄g",
+    "pieces": [
+     "chn̄g"
+    ]
+   },
+   {
+    "date": "20240730",
+    "text": "kāu-hō͘-chok-iōng seng-hē",
+    "pieces": [
+     "hō͘"
+    ]
+   },
+   {
+    "date": "20240819",
+    "text": "IC ngô͘-it-sù-lio̍k",
+    "pieces": [
+     "ngô͘"
+    ]
+   },
+   {
+    "date": "20240913",
+    "text": "La̍h-hō͘-tsō Sing-hûn",
+    "pieces": [
+     "hō͘"
+    ]
+   },
+   {
+    "date": "20241008",
+    "text": "ji̍t-chuân-si̍t",
+    "pieces": [
+     "chuân"
+    ]
+   },
+   {
+    "date": "20241103",
+    "text": "kńg-lê-á-chn̄g",
+    "pieces": [
+     "chn̄g"
+    ]
+   },
+   {
+    "date": "20250120",
+    "text": "Chuí-tshenn",
+    "pieces": [
+     "Chuí"
+    ]
+   },
+   {
+    "date": "20250202",
+    "text": "Chuí-tshenn",
+    "pieces": [
+     "Chuí"
+    ]
+   },
+   {
+    "date": "20250419",
+    "text": "kńg-lê-á-chn̄g",
+    "pieces": [
+     "chn̄g"
+    ]
+   },
+   {
+    "date": "20250623",
+    "text": "Sian-hāu-chò",
+    "pieces": [
+     "chò"
+    ]
+   },
+   {
+    "date": "20250721",
+    "text": "âng-gōa-sòaⁿ",
+    "pieces": [
+     "sòaⁿ"
+    ]
+   }
+  ],
+  "multi_tone": [],
+  "caron": [
+   {
+    "where": "[20250401](https://apod.tw/daily/20250401/) row 4 KipUnicode",
+    "text": "tē-pîng-sǔn"
+   }
+  ]
+ },
+ "oldest_article": "20190411",
+ "newest_article": "20251004"
+}
