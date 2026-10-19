@@ -7,8 +7,10 @@ the Taigi vocabulary of that day's text in Han-Lo, Pe̍h-ōe-jī, KPL, Mandarin
 and English. Each table row becomes one row of `ApodSului` with the
 ChhoeTaigi database's column names (`PojUnicode`, `PojInput`, `KipUnicode`,
 `KipInput`, `HanLoTaibunPoj`, `HoaBun`, `EngBun`, `LaigoanMia`, `LaigoanBangchi`), so
-the table loads without renaming. The articles themselves — their titles in the
-same four languages — become `ApodBunchiunn`, one row per article.
+the table loads without renaming, after an id `YYYYMMDD-NN` built from
+the article's date and the row's position in its table. The article's title,
+given on the page in the same languages minus Mandarin, is the article's
+first row, `NN` 00.
 
 Nothing is corrected: every cell is published as written on the site, and
 what looks wrong (a POJ cell that is not Pe̍h-ōe-jī, an empty cell, a table
@@ -39,16 +41,18 @@ try:
 except ImportError:
     from script.fetch_articles import ARTICLE_URL_TEMPLATE, read_site  # noqa: F401
 
-TABLE_NAME = "ApodSului"           # 詞彙 sû-lūi: one row per vocabulary entry
-ARTICLES_NAME = "ApodBunchiunn"    # 文章 bûn-chiuⁿ: one row per article
+TABLE_NAME = "ApodSului"           # 詞彙 sû-lūi: one row per vocabulary entry or title
 REPORT_NAME = "ApodDataQuality"
 
-# Columns of the ChhoeTaigi database, so the table loads without renaming.
-COLUMNS = ["PojUnicode", "PojInput", "KipUnicode", "KipInput", "HanLoTaibunPoj",
+# The row's id, then the columns of the ChhoeTaigi database, so the table
+# loads without renaming. WordId: `YYYYMMDD-NN`, the article's date and
+# the row's position in the site's table (header excluded, blank rows
+# included — the `row N` of the report, so the row can be found on the page);
+# 00 is the article's title, which precedes the table on the page.
+COLUMNS = ["WordId", "PojUnicode", "PojInput", "KipUnicode", "KipInput", "HanLoTaibunPoj",
            "HoaBun", "EngBun", "LaigoanMia", "LaigoanBangchi"]
-# Jitki 日期: the article's date. SuluiSoo 詞彙數: rows it has in ApodSului.
-ARTICLE_COLUMNS = ["Jitki", "HanLoTaibunPoj", "PojUnicode", "PojInput", "KipUnicode",
-                   "KipInput", "EngBun", "SuluiSoo", "LaigoanMia", "LaigoanBangchi"]
+WORD_ID = "{date}-{row:02d}"
+TITLE_ROW = 0
 # LaigoanMia 來源名: the source, written the way apod.tw's FAQ asks to be credited.
 LAIGOAN_MIA = "逐工一幅天文圖 https://apod.tw"
 
@@ -58,7 +62,7 @@ HEADER_COLUMNS = {"漢羅": "HanLoTaibunPoj", "POJ": "PojUnicode", "KIP": "KipUn
                   "華語": "HoaBun", "English": "EngBun"}
 EXPECTED_HEADERS = list(HEADER_COLUMNS)
 # The article's title is repeated in four headings: `[漢羅] …`, `[POJ] …`,
-# `[KIP] …`, `[English] …`.
+# `[KIP] …`, `[English] …`. There is no Mandarin title.
 TITLE_PREFIXES = {"漢羅": "HanLoTaibunPoj", "POJ": "PojUnicode", "KIP": "KipUnicode",
                   "English": "EngBun"}
 # `[English] …`; a few headings wrote the tag as a link and show `English …`,
@@ -84,8 +88,10 @@ TONE_MARK_CLASS = "[" + "".join(TONE_MARKS) + "]"
 POJ_MARKERS = re.compile(TONE_MARK_CLASS + "|\u0358|ⁿ")
 KPL_MARKERS = re.compile(TONE_MARK_CLASS + "|oo|nn|ts")
 HAS_TONE_MARK = re.compile(TONE_MARK_CLASS)
-# Punctuation around a piece is not part of it: `(gîn-sim)`, `"tiám"`.
+# Punctuation is not part of a piece, around it or inside it: `(gîn-sim)`,
+# `"tiám"`, and `7293：Kńg` where the site put no space after the colon.
 PIECE_PUNCTUATION = "()\"'“”‘’«»,.:;!?…/[]【】（）「」『』、，。：；！？"
+PUNCTUATION_SPLIT = re.compile("[" + re.escape(PIECE_PUNCTUATION) + "]+")
 
 # How many examples each report section lists.
 REPORT_SAMPLE_SIZE = 50
@@ -177,11 +183,11 @@ def parse_article(html_text):
 POST_DATE_FORMATS = ["%d. %B %Y"]
 
 
-def post_date_to_iso(text):
-    """`13. June 2025` → `2025-06-13`, or None."""
+def post_date_to_url_date(text):
+    """`13. June 2025` → `20250613`, the date as the article's URL writes it, or None."""
     for fmt in POST_DATE_FORMATS:
         try:
-            return datetime.datetime.strptime(text, fmt).date().isoformat()
+            return datetime.datetime.strptime(text, fmt).strftime("%Y%m%d")
         except ValueError:
             continue
     return None
@@ -222,17 +228,17 @@ def strip_tones(text):
 
 
 def _marked_pieces(text, markers):
-    """The hyphen/space pieces of text, punctuation stripped, that carry one
-    of markers — except a capitalised piece with no tone mark, which is a
-    name (`Kennedy`, `Bennu`) rather than a syllable to check."""
-    for piece in PIECE_SPLIT.split(text):
-        piece = piece.strip(PIECE_PUNCTUATION)
-        nfd = unicodedata.normalize("NFD", piece)
-        if not piece or not markers.search(nfd):
-            continue
-        if piece[0].isupper() and not HAS_TONE_MARK.search(nfd):
-            continue
-        yield piece
+    """The pieces of text — split on spaces, hyphens and punctuation — that
+    carry one of markers, except a capitalised piece with no tone mark, which
+    is a name (`Kennedy`, `Bennu`) rather than a syllable to check."""
+    for chunk in PIECE_SPLIT.split(text):
+        for piece in PUNCTUATION_SPLIT.split(chunk):
+            nfd = unicodedata.normalize("NFD", piece)
+            if not piece or not markers.search(nfd):
+                continue
+            if piece[0].isupper() and not HAS_TONE_MARK.search(nfd):
+                continue
+            yield piece
 
 
 # The syllable regex (kept as the siblings have it) does not know the tone-9
@@ -263,12 +269,40 @@ def pieces_not_kpl(text):
             if not KPL_SYLLABLE.match(strip_tones(p).lower())]
 
 
-def to_input(text, report, where, counter_key):
+def to_input(text, report, where):
     converted, multi = poj_unicode_to_input(text)
     if multi:
         report["rows"]["multi_tone"].append({"where": where, "text": text, "words": multi})
-        report["counts"][counter_key] += 1
+        report["counts"]["rows_multi_tone"] += 1
     return converted
+
+
+def new_row(date, number, url):
+    """An empty row of article `date` at position `number` (TITLE_ROW for
+    the title), with its id and source columns set."""
+    row = {col: "" for col in COLUMNS}
+    row["WordId"] = WORD_ID.format(date=date, row=number)
+    row["LaigoanMia"] = LAIGOAN_MIA
+    row["LaigoanBangchi"] = url
+    return row
+
+
+def check_row(row, date, where, report):
+    """Builds the input forms and runs the spelling checks — the same for a
+    title row and a table row."""
+    row["PojInput"] = to_input(row["PojUnicode"], report, where)
+    row["KipInput"] = to_input(row["KipUnicode"], report, where)
+    bad = pieces_not_poj(row["PojUnicode"])
+    if bad:
+        report["rows"]["not_poj"].append(
+            {"where": where, "date": date, "text": row["PojUnicode"], "pieces": bad})
+    bad = pieces_not_kpl(row["KipUnicode"])
+    if bad:
+        report["rows"]["not_kpl"].append(
+            {"where": where, "date": date, "text": row["KipUnicode"], "pieces": bad})
+    for col in ("PojUnicode", "KipUnicode"):
+        if _has_caron_on_bearer(row[col]):
+            report["rows"]["caron"].append({"where": f"{where} {col}", "text": row[col]})
 
 
 # --- Output -----------------------------------------------------------------
@@ -353,8 +387,11 @@ def render_report_md(report):
 
     out += ["### Titles", "",
             f"Every article's title is read from its `[漢羅]`, `[POJ]`, `[KIP]` and "
-            f"`[English]` headings. Articles lacking one or more (an empty heading "
-            f"counts as lacking): {c['articles_titles_incomplete']:,}.", ""]
+            f"`[English]` headings and is its first row in `{TABLE_NAME}` (`WordId` "
+            f"ending in `-00`; `HoaBun` empty, the site has no Mandarin title). Articles "
+            f"lacking one or more headings (an empty heading counts as lacking): "
+            f"{c['articles_titles_incomplete']:,}. One lacking all four and the `<h1>` "
+            f"would get no title row.", ""]
     if report["articles"]["titles_incomplete"]:
         shown, note = _shown(report["articles"]["titles_incomplete"], "articles")
         out += [_md_table(["Article", "Missing"],
@@ -394,11 +431,14 @@ def render_report_md(report):
                            for r in shown]) + note, ""]
 
     out += ["## 3. Rows", "",
-            f"{c['rows']:,} rows in `{TABLE_NAME}`, {c['rows_distinct_poj']:,} distinct "
-            f"`PojUnicode`, {c['rows_distinct_hanlo']:,} distinct `HanLoTaibunPoj`.", "",
+            f"{c['rows']:,} rows in `{TABLE_NAME}`: {c['rows_title']:,} titles (one per "
+            f"article, `WordId` ending in `-00`) and {c['rows_table']:,} table rows, with "
+            f"{c['rows_distinct_poj']:,} distinct `PojUnicode` and {c['rows_distinct_hanlo']:,} "
+            f"distinct `HanLoTaibunPoj` among the table rows.", "",
             _md_table(["Column", "Rows filled"],
                       [(_code(col), f"{c[f'rows_{col}']:,}") for col in COLUMNS]), ""]
-    for key, title in [("empty_cells", "Rows with an empty cell"),
+    for key, title in [("empty_cells", "Table rows with an empty cell "
+                                       "(a title row lacking a heading is listed under Titles)"),
                        ("not_poj", "POJ cells with a piece that is not Pe̍h-ōe-jī"),
                        ("not_kpl", "KIP cells with a piece that is not KPL"),
                        ("multi_tone", "Words with more than one tone mark (input form not built)"),
@@ -413,8 +453,8 @@ def render_report_md(report):
                               [(_link(r["date"]), ", ".join(r["empty"]), _code(r["HanLoTaibunPoj"]),
                                 _code(r["PojUnicode"]), _code(r["KipUnicode"])) for r in shown])]
         elif key in ("not_poj", "not_kpl"):
-            out += [_md_table(["Article", "Cell", "Pieces"],
-                              [(_link(r["date"]), _code(r["text"]),
+            out += [_md_table(["Where", "Cell", "Pieces"],
+                              [(r["where"], _code(r["text"]),
                                 ", ".join(_code(p) for p in r["pieces"])) for r in shown])]
         elif key == "multi_tone":
             out += [_md_table(["Where", "Text", "Words"],
@@ -433,7 +473,7 @@ def render_report_md(report):
 
 def convert_articles(tangloo_dir, bunji_dir, report_dir=None, version="", site=None):
     """Reads tangloo_dir (see fetch_articles.py), writes
-    bunji_dir/{ApodSului,ApodBunchiunn}.{csv,json} and the report into
+    bunji_dir/ApodSului.{csv,json} and the report into
     report_dir (default bunji_dir's parent). `site` is what fetch_site /
     read_site returned; read from disk when not given. Returns the counts."""
     tangloo_dir, bunji_dir = Path(tangloo_dir), Path(bunji_dir)
@@ -460,46 +500,42 @@ def convert_articles(tangloo_dir, bunji_dir, report_dir=None, version="", site=N
     counts["articles_fetched"] = len(site["fetched"])
     counts["articles_missing"] = len(site["missing"])
 
-    rows, articles = [], []
+
+    rows, table_rows = [], []
     for date in site["fetched"]:
         url = ARTICLE_URL_TEMPLATE.format(date=date)
         parsed = parse_article((tangloo_dir / "daily" / f"{date}.html").read_text(
             encoding="utf-8", errors="replace"))
-        iso = f"{date[:4]}-{date[4:6]}-{date[6:]}"
-        if parsed.post_date and post_date_to_iso(parsed.post_date) != iso:
+        if parsed.post_date and post_date_to_url_date(parsed.post_date) != date:
             report["articles"]["date_mismatch"].append({"date": date, "post_date": parsed.post_date})
 
+        # The title first, as on the page: the article's row 00. The site has
+        # no Mandarin title, so its HoaBun stays empty.
         titles = article_titles(parsed)
         # A heading with nothing after its tag (`[KIP]`) is missing too.
         missing_titles = [col for col in TITLE_PREFIXES.values() if not titles.get(col)]
         if missing_titles:
             report["articles"]["titles_incomplete"].append({"date": date, "missing": missing_titles})
             counts["articles_titles_incomplete"] += 1
+        title = new_row(date, TITLE_ROW, url)
         # The page's <h1> is the Han-Lo title; it stands in when the heading is missing.
-        hanlo_title = titles.get("HanLoTaibunPoj") or parsed.h1 or ""
-        article = {
-            "Jitki": iso,
-            "HanLoTaibunPoj": hanlo_title,
-            "PojUnicode": titles.get("PojUnicode", ""),
-            "PojInput": "",
-            "KipUnicode": titles.get("KipUnicode", ""),
-            "KipInput": "",
-            "EngBun": titles.get("EngBun", ""),
-            "SuluiSoo": 0,
-            "LaigoanMia": LAIGOAN_MIA,
-            "LaigoanBangchi": url,
-        }
-        article["PojInput"] = to_input(article["PojUnicode"], report, f"{_link(date)} title",
-                                       "articles_multi_tone")
-        article["KipInput"] = to_input(article["KipUnicode"], report, f"{_link(date)} title",
-                                       "articles_multi_tone")
+        title["HanLoTaibunPoj"] = titles.get("HanLoTaibunPoj") or parsed.h1 or ""
+        for col in ("PojUnicode", "KipUnicode", "EngBun"):
+            title[col] = titles.get(col, "")
+        if all(not title[col] for col in TITLE_PREFIXES.values()):
+            # No heading and no <h1>: a row of empty cells, skipped like a blank
+            # table row. The article is under Titles with all four missing.
+            counts["rows_blank_skipped"] += 1
+        else:
+            check_row(title, date, f"{_link(date)} title", report)
+            rows.append(title)
+            counts["rows_title"] += 1
 
         table, problem = vocabulary_table(parsed)
         if table is None:
             key = "no_heading" if problem == "no heading" else "no_table"
             report["articles"][key].append(date)
             counts[f"articles_{key}"] += 1
-            articles.append(article)
             continue
         counts["articles_with_table"] += 1
         if not table["rows"]:
@@ -519,54 +555,45 @@ def convert_articles(tangloo_dir, bunji_dir, report_dir=None, version="", site=N
                 {"date": date, "row": number, "cells": table["rows"][number - 1]})
 
         # `number` is the row's position in the site's table, header excluded,
-        # so a report entry can be found on the page; SuluiSoo counts kept rows.
+        # so a report entry — and the id — can be found on the page.
         for number, cells in enumerate(table["rows"], 1):
             if len(cells) != len(headers):
                 counts["rows_cell_count_mismatch"] += 1
                 report["tables"]["cell_count_mismatch"].append({"date": date, "cells": cells})
-            row = {col: "" for col in COLUMNS}
+            row = new_row(date, number, url)
             for col, cell in zip(columns, cells):
                 if col:
                     row[col] = cell
-            row["LaigoanMia"] = LAIGOAN_MIA
-            row["LaigoanBangchi"] = url
-            if all(not row[col] for col in COLUMNS if col not in ("LaigoanMia", "LaigoanBangchi")):
+            if all(not row[col] for col in HEADER_COLUMNS.values()):
                 # A row of empty cells says nothing; a filler line.
                 counts["rows_blank_skipped"] += 1
                 continue
-            where = f"{_link(date)} row {number}"
-            row["PojInput"] = to_input(row["PojUnicode"], report, where, "rows_multi_tone")
-            row["KipInput"] = to_input(row["KipUnicode"], report, where, "rows_multi_tone")
-
-            empty = [col for col in ("HanLoTaibunPoj", "PojUnicode", "KipUnicode", "HoaBun", "EngBun")
-                     if not row[col]]
+            empty = [col for col in HEADER_COLUMNS.values() if not row[col]]
             if empty:
                 report["rows"]["empty_cells"].append(
                     {"date": date, "empty": empty, "HanLoTaibunPoj": row["HanLoTaibunPoj"],
                      "PojUnicode": row["PojUnicode"], "KipUnicode": row["KipUnicode"]})
-            bad = pieces_not_poj(row["PojUnicode"])
-            if bad:
-                report["rows"]["not_poj"].append({"date": date, "text": row["PojUnicode"], "pieces": bad})
-            bad = pieces_not_kpl(row["KipUnicode"])
-            if bad:
-                report["rows"]["not_kpl"].append({"date": date, "text": row["KipUnicode"], "pieces": bad})
-            for col in ("PojUnicode", "KipUnicode"):
-                if _has_caron_on_bearer(row[col]):
-                    report["rows"]["caron"].append({"where": f"{where} {col}", "text": row[col]})
+            check_row(row, date, f"{_link(date)} row {number}", report)
             rows.append(row)
-            article["SuluiSoo"] += 1
-        articles.append(article)
+            table_rows.append(row)
+            counts["rows_table"] += 1
+
+    # Unique by construction (one article per date, one position per row); a
+    # duplicate would be a bug here, not on the site, and must not be published.
+    duplicates = sorted(i for i, n in collections.Counter(r["WordId"] for r in rows).items() if n > 1)
+    if duplicates:
+        raise ValueError(f"{TABLE_NAME}: WordId not unique: {', '.join(duplicates[:20])}")
 
     counts["rows"] = len(rows)
-    counts["rows_distinct_poj"] = len({r["PojUnicode"] for r in rows if r["PojUnicode"]})
-    counts["rows_distinct_hanlo"] = len({r["HanLoTaibunPoj"] for r in rows if r["HanLoTaibunPoj"]})
+    # Distinct vocabulary forms: the titles are sentences, not entries.
+    counts["rows_distinct_poj"] = len({r["PojUnicode"] for r in table_rows if r["PojUnicode"]})
+    counts["rows_distinct_hanlo"] = len({r["HanLoTaibunPoj"] for r in table_rows if r["HanLoTaibunPoj"]})
     for col in COLUMNS:
         counts[f"rows_{col}"] = sum(1 for r in rows if r[col])
     for key in ("empty_cells", "not_poj", "not_kpl", "caron"):
         counts[f"rows_{key}"] = len(report["rows"][key])
-    counts["articles_rows"] = len(articles)
     for key in ("articles_no_heading", "articles_no_table", "articles_empty_table",
-                "articles_titles_incomplete", "articles_multi_tone", "rows_multi_tone",
+                "articles_titles_incomplete", "rows_multi_tone", "rows_title", "rows_table",
                 "rows_blank_skipped", "tables_expected_headers", "tables_other_headers",
                 "rows_cell_count_mismatch", "rows_header_like", "articles_with_table"):
         counts.setdefault(key, 0)
@@ -577,8 +604,6 @@ def convert_articles(tangloo_dir, bunji_dir, report_dir=None, version="", site=N
 
     write_csv(rows, COLUMNS, bunji_dir / f"{TABLE_NAME}.csv")
     write_json_rows(rows, bunji_dir / f"{TABLE_NAME}.json")
-    write_csv(articles, ARTICLE_COLUMNS, bunji_dir / f"{ARTICLES_NAME}.csv")
-    write_json_rows(articles, bunji_dir / f"{ARTICLES_NAME}.json")
 
     report["counts"] = dict(counts)
     write_report(report, report_dir)
@@ -611,7 +636,8 @@ def main():
     args = parser.parse_args()
     sys.stdout.reconfigure(errors="backslashreplace")
     counts = convert_articles(args.tangloo_dir, args.bunji_dir, version=args.version)
-    for key in ("articles", "articles_with_table", "rows", "rows_not_poj", "rows_not_kpl"):
+    for key in ("articles", "articles_with_table", "rows", "rows_title", "rows_table",
+                "rows_not_poj", "rows_not_kpl"):
         print(f"{key}: {counts.get(key, 0):,}")
 
 

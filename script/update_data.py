@@ -10,27 +10,29 @@ import time
 from pathlib import Path
 
 try:
-    from convert_articles import (ARTICLES_NAME, LAIGOAN_MIA, REPORT_NAME, TABLE_NAME,
-                                  convert_articles, set_report_version)
+    from convert_articles import (LAIGOAN_MIA, REPORT_NAME, TABLE_NAME, convert_articles,
+                                  set_report_version)
     from fetch_articles import SITE, SITEMAP_URL, copy_site, fetch_site, read_site
 except ImportError:
     sys.path.append(str(Path(__file__).resolve().parent))
-    from convert_articles import (ARTICLES_NAME, LAIGOAN_MIA, REPORT_NAME, TABLE_NAME,
-                                  convert_articles, set_report_version)
+    from convert_articles import (LAIGOAN_MIA, REPORT_NAME, TABLE_NAME, convert_articles,
+                                  set_report_version)
     from fetch_articles import SITE, SITEMAP_URL, copy_site, fetch_site, read_site
 
-# The published tables, CSV and JSON, are what change detection compares: a
+# The published table, CSV and JSON, is what change detection compares: a
 # new version appears only when the vocabulary (or how this repo renders it)
 # actually changed, not when the site's templates do. The report is not
 # compared: a report-only change goes live with the next table change.
-CHANGE_KEYS = [f"bunji/{name}.{ext}" for name in (TABLE_NAME, ARTICLES_NAME)
-               for ext in ("csv", "json")]
+CHANGE_KEYS = [f"bunji/{TABLE_NAME}.{ext}" for ext in ("csv", "json")]
 
 # A partial failure upstream — a site redesign that renames the 詞彙學習
-# heading, a sitemap cut short — shows up as a sharp drop in these counts
-# against the last version. Losing more than MAX_COUNT_DROP of any refuses to
-# publish, unless --force.
-WATCHED_COUNTS = ["articles", "articles_with_table", "rows"]
+# heading or the title headings, a sitemap cut short — shows up as a sharp
+# drop in these counts against the last version. Losing more than
+# MAX_COUNT_DROP of any refuses to publish, unless --force. The table rows are
+# watched on their own (every article has a title row, table or not), and the
+# filled POJ/KIP counts catch titles that lost their headings.
+WATCHED_COUNTS = ["articles", "articles_with_table", "rows_table",
+                  "rows_PojUnicode", "rows_KipUnicode"]
 MAX_COUNT_DROP = 0.05
 
 # The site's terms, from https://apod.tw/faq/: open data from the site is
@@ -259,7 +261,7 @@ def main():
                 "license": LICENSE,
                 "attribution": ATTRIBUTION,
                 "row_count": stats["rows"],
-                "article_count": stats["articles_rows"],
+                "article_count": stats["articles_fetched"],
                 "files": new_hashes,
                 "counts": stats,
             }

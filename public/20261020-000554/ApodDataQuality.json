@@ -1,5 +1,5 @@
 {
- "version": "20261010-143253",
+ "version": "20261020-000554",
  "source": "https://apod.tw/",
  "counts": {
   "articles_sitemap": 1511,
@@ -8,33 +8,36 @@
   "articles": 1511,
   "articles_fetched": 1511,
   "articles_missing": 0,
+  "rows_title": 1511,
   "articles_with_table": 1511,
   "tables_expected_headers": 1511,
+  "rows_table": 13587,
   "articles_titles_incomplete": 7,
-  "rows": 13587,
+  "rows": 15098,
   "rows_distinct_poj": 4943,
   "rows_distinct_hanlo": 4091,
-  "rows_PojUnicode": 13581,
-  "rows_PojInput": 13581,
-  "rows_KipUnicode": 13575,
-  "rows_KipInput": 13575,
-  "rows_HanLoTaibunPoj": 13587,
+  "rows_WordId": 15098,
+  "rows_PojUnicode": 15090,
+  "rows_PojInput": 15090,
+  "rows_KipUnicode": 15083,
+  "rows_KipInput": 15083,
+  "rows_HanLoTaibunPoj": 15098,
   "rows_HoaBun": 13582,
-  "rows_EngBun": 13578,
-  "rows_LaigoanBangchi": 13587,
+  "rows_EngBun": 15088,
+  "rows_LaigoanMia": 15098,
+  "rows_LaigoanBangchi": 15098,
   "rows_empty_cells": 29,
-  "rows_not_poj": 9,
-  "rows_not_kpl": 74,
-  "rows_caron": 1,
-  "articles_rows": 1511,
+  "rows_not_poj": 17,
+  "rows_not_kpl": 94,
+  "rows_caron": 4,
   "articles_no_heading": 0,
   "articles_no_table": 0,
   "articles_empty_table": 0,
-  "articles_multi_tone": 0,
   "rows_multi_tone": 0,
   "rows_blank_skipped": 0,
   "tables_other_headers": 0,
-  "rows_cell_count_mismatch": 0
+  "rows_cell_count_mismatch": 0,
+  "rows_header_like": 0
  },
  "articles": {
   "sitemap_only": [],
@@ -91,7 +94,8 @@
  },
  "tables": {
   "other_headers": [],
-  "cell_count_mismatch": []
+  "cell_count_mismatch": [],
+  "header_like_rows": []
  },
  "rows": {
   "empty_cells": [
@@ -362,6 +366,7 @@
   ],
   "not_poj": [
    {
+    "where": "[20210829](https://apod.tw/daily/20210829/) row 3",
     "date": "20210829",
     "text": "Siang Sió-kiânn-tshinn Tiông-sin-tīng-hiòng Tshik-giām",
     "pieces": [
@@ -369,6 +374,7 @@
     ]
    },
    {
+    "where": "[20211214](https://apod.tw/daily/20211214/) row 7",
     "date": "20211214",
     "text": "HH lio̍k-lio̍k柱-lio̍k thian-thé",
     "pieces": [
@@ -376,6 +382,7 @@
     ]
    },
    {
+    "where": "[20221017](https://apod.tw/daily/20221017/) row 3",
     "date": "20221017",
     "text": "hok-siā-suànn",
     "pieces": [
@@ -383,6 +390,23 @@
     ]
    },
    {
+    "where": "[20230408](https://apod.tw/daily/20230408/) title",
+    "date": "20230408",
+    "text": "M100: Tsi̍t-ê Uí-tāi-siat-kè ê Kńg-lê-á Sing-hē",
+    "pieces": [
+     "Tsi̍t"
+    ]
+   },
+   {
+    "where": "[20230530](https://apod.tw/daily/20230530/) title",
+    "date": "20230530",
+    "text": "Ḿ7: É-cheng seng-hûn",
+    "pieces": [
+     "Ḿ7"
+    ]
+   },
+   {
+    "where": "[20230603](https://apod.tw/daily/20230603/) row 9",
     "date": "20230603",
     "text": "hū-phìnn",
     "pieces": [
@@ -390,6 +414,23 @@
     ]
    },
    {
+    "where": "[20230831](https://apod.tw/daily/20230831/) title",
+    "date": "20230831",
+    "text": "Tsài-lâng 7 hō Jīm-bū ê Sing-hûn",
+    "pieces": [
+     "Tsài"
+    ]
+   },
+   {
+    "where": "[20231104](https://apod.tw/daily/20231104/) title",
+    "date": "20231104",
+    "text": "Dinkinesh Sió-kiânn-tshenn ê Gue̍h-tshut",
+    "pieces": [
+     "kiânn"
+    ]
+   },
+   {
+    "where": "[20231110](https://apod.tw/daily/20231110/) row 5",
     "date": "20231110",
     "text": "Gio̍k-hu-tsō",
     "pieces": [
@@ -397,6 +438,32 @@
     ]
    },
    {
+    "where": "[20240524](https://apod.tw/daily/20240524/) title",
+    "date": "20240524",
+    "text": "Euclid Thài-khong Bōng-oán-kiàⁿ hip--tio̍h ê Hêng-chheⁿ hêng-sêng-khu M̄8",
+    "pieces": [
+     "M̄8"
+    ]
+   },
+   {
+    "where": "[20240916](https://apod.tw/daily/20240916/) title",
+    "date": "20240916",
+    "text": "BepiColombo Thài-khong-tsûn hip--ê Tsuí-tshenn ún-si̍k-khenn Vivaldi",
+    "pieces": [
+     "tsûn",
+     "Tsuí"
+    ]
+   },
+   {
+    "where": "[20241107](https://apod.tw/daily/20241107/) title",
+    "date": "20241107",
+    "text": "Siang-hî-tsō lāi-té ê Hûn-khak Sing-hē",
+    "pieces": [
+     "tsō"
+    ]
+   },
+   {
+    "where": "[20250721](https://apod.tw/daily/20250721/) row 6",
     "date": "20250721",
     "text": "Uí-peh Thài-khong Bōng-uán-kiànn",
     "pieces": [
@@ -404,6 +471,7 @@
     ]
    },
    {
+    "where": "[20250721](https://apod.tw/daily/20250721/) row 8",
     "date": "20250721",
     "text": "hun-tsú hûn",
     "pieces": [
@@ -411,6 +479,15 @@
     ]
    },
    {
+    "where": "[20250908](https://apod.tw/daily/20250908/) title",
+    "date": "20250908",
+    "text": "IRAS 04302: Hô͘-tia̍p-pôaⁿ ê Hhêng-chhiⁿ Hêng-sêng",
+    "pieces": [
+     "Hhêng"
+    ]
+   },
+   {
+    "where": "[20250922](https://apod.tw/daily/20250922/) row 6",
     "date": "20250922",
     "text": "pak-puànn-kiû",
     "pieces": [
@@ -418,6 +495,7 @@
     ]
    },
    {
+    "where": "[20250922](https://apod.tw/daily/20250922/) row 7",
     "date": "20250922",
     "text": "lâm-puànn-kiû",
     "pieces": [
@@ -427,6 +505,7 @@
   ],
   "not_kpl": [
    {
+    "where": "[20210117](https://apod.tw/daily/20210117/) row 4",
     "date": "20210117",
     "text": "tiān-chiunn phùn-lâu",
     "pieces": [
@@ -434,6 +513,7 @@
     ]
    },
    {
+    "where": "[20210210](https://apod.tw/daily/20210210/) row 10",
     "date": "20210210",
     "text": "sī-bāng-mo̍͘h",
     "pieces": [
@@ -441,6 +521,7 @@
     ]
    },
    {
+    "where": "[20210211](https://apod.tw/daily/20210211/) row 1",
     "date": "20210211",
     "text": "Thian-gô-chō",
     "pieces": [
@@ -448,6 +529,7 @@
     ]
    },
    {
+    "where": "[20210311](https://apod.tw/daily/20210311/) row 8",
     "date": "20210311",
     "text": "sing-tsè-thô͘-hún-lia̍p",
     "pieces": [
@@ -455,6 +537,40 @@
     ]
    },
    {
+    "where": "[20210312](https://apod.tw/daily/20210312/) title",
+    "date": "20210312",
+    "text": "Messier pueh-cha̍p-it",
+    "pieces": [
+     "cha̍p"
+    ]
+   },
+   {
+    "where": "[20210314](https://apod.tw/daily/20210314/) title",
+    "date": "20210314",
+    "text": "Messier pueh-cha̍p-it",
+    "pieces": [
+     "cha̍p"
+    ]
+   },
+   {
+    "where": "[20210318](https://apod.tw/daily/20210318/) title",
+    "date": "20210318",
+    "text": "Ing-sian-tsō hun-chú-hûn ê sing-tsè thô͘-hún",
+    "pieces": [
+     "chú",
+     "thô͘"
+    ]
+   },
+   {
+    "where": "[20210412](https://apod.tw/daily/20210412/) title",
+    "date": "20210412",
+    "text": "Tsham-siùg-it kah Hué-tsi̍h sing-hûn",
+    "pieces": [
+     "siùg"
+    ]
+   },
+   {
+    "where": "[20210423](https://apod.tw/daily/20210423/) row 1",
     "date": "20210423",
     "text": "Kok-chè-thài-khong-chām",
     "pieces": [
@@ -463,6 +579,7 @@
     ]
    },
    {
+    "where": "[20210512](https://apod.tw/daily/20210512/) row 4",
     "date": "20210512",
     "text": "kiânn-tshinn-kan thô͘-hún-lia̍p",
     "pieces": [
@@ -470,6 +587,7 @@
     ]
    },
    {
+    "where": "[20210524](https://apod.tw/daily/20210524/) row 1",
     "date": "20210524",
     "text": "iûnn-á kiânn-tshiⁿ",
     "pieces": [
@@ -477,6 +595,7 @@
     ]
    },
    {
+    "where": "[20210606](https://apod.tw/daily/20210606/) row 7",
     "date": "20210606",
     "text": "lji̍t-tsuân-si̍t",
     "pieces": [
@@ -484,6 +603,7 @@
     ]
    },
    {
+    "where": "[20210609](https://apod.tw/daily/20210609/) row 4",
     "date": "20210609",
     "text": "Tshiau-kip hue-hueh-gue̍he",
     "pieces": [
@@ -491,6 +611,15 @@
     ]
    },
    {
+    "where": "[20210620](https://apod.tw/daily/20210620/) title",
+    "date": "20210620",
+    "text": "Tī Stonehenge thinn-tíng ê ji̍t-tshut hā-chì",
+    "pieces": [
+     "chì"
+    ]
+   },
+   {
+    "where": "[20210718](https://apod.tw/daily/20210718/) row 4",
     "date": "20210718",
     "text": "tn̂g-tu-îⁿ sing-hē",
     "pieces": [
@@ -498,6 +627,7 @@
     ]
    },
    {
+    "where": "[20210721](https://apod.tw/daily/20210721/) row 4",
     "date": "20210721",
     "text": "sng-sò͘",
     "pieces": [
@@ -505,6 +635,32 @@
     ]
    },
    {
+    "where": "[20210817](https://apod.tw/daily/20210817/) title",
+    "date": "20210817",
+    "text": "M-gō͘-cha̍p-chhit: Hap-peh hip--ê Khoân-hêng-seng-hûn",
+    "pieces": [
+     "gō͘",
+     "cha̍p"
+    ]
+   },
+   {
+    "where": "[20210820](https://apod.tw/daily/20210820/) title",
+    "date": "20210820",
+    "text": "Saⁿ-àm ê Eng-sian-chō liû-chhiⁿ",
+    "pieces": [
+     "chō"
+    ]
+   },
+   {
+    "where": "[20210902](https://apod.tw/daily/20210902/) title",
+    "date": "20210902",
+    "text": "M̂1: O-lûn sing-hē",
+    "pieces": [
+     "M̂1"
+    ]
+   },
+   {
+    "where": "[20211006](https://apod.tw/daily/20211006/) row 5",
     "date": "20211006",
     "text": "Chhiâ-ko-hîng sing-thuân",
     "pieces": [
@@ -512,6 +668,7 @@
     ]
    },
    {
+    "where": "[20211006](https://apod.tw/daily/20211006/) row 6",
     "date": "20211006",
     "text": "Chhiâ-to-hîng sing-thuân",
     "pieces": [
@@ -519,6 +676,24 @@
     ]
    },
    {
+    "where": "[20211205](https://apod.tw/daily/20211205/) title",
+    "date": "20211205",
+    "text": "Tī Sè-kài kha-chhng-bóe ê Ji̍t-choân-si̍t",
+    "pieces": [
+     "choân"
+    ]
+   },
+   {
+    "where": "[20220129](https://apod.tw/daily/20220129/) title",
+    "date": "20220129",
+    "text": "Thian-lô͘-chō seng-hē-thoân",
+    "pieces": [
+     "lô͘",
+     "chō"
+    ]
+   },
+   {
+    "where": "[20220602](https://apod.tw/daily/20220602/) row 8",
     "date": "20220602",
     "text": "thàu-chá-chhiⁿ",
     "pieces": [
@@ -526,6 +701,7 @@
     ]
    },
    {
+    "where": "[20220610](https://apod.tw/daily/20220610/) row 2",
     "date": "20220610",
     "text": "Sik-lú-chō",
     "pieces": [
@@ -533,6 +709,15 @@
     ]
    },
    {
+    "where": "[20220613](https://apod.tw/daily/20220613/) title",
+    "date": "20220613",
+    "text": "M̂1: Hubble Thài-khong-bōng-uán-kiànn hip--ê O-lûn-sing-hē",
+    "pieces": [
+     "M̂1"
+    ]
+   },
+   {
+    "where": "[20220614](https://apod.tw/daily/20220614/) row 2",
     "date": "20220614",
     "text": "kē kuí-tō se̍h-tē-uī-chhiⁿâ",
     "pieces": [
@@ -540,6 +725,7 @@
     ]
    },
    {
+    "where": "[20220708](https://apod.tw/daily/20220708/) row 2",
     "date": "20220708",
     "text": "hî-gán-kiàⁿ-thâu",
     "pieces": [
@@ -547,6 +733,15 @@
     ]
    },
    {
+    "where": "[20220722](https://apod.tw/daily/20220722/) title",
+    "date": "20220722",
+    "text": "Kńg-lê-á sing-hē M̄4: Khah tshing-tshóo ê pán-pún",
+    "pieces": [
+     "M̄4"
+    ]
+   },
+   {
+    "where": "[20220723](https://apod.tw/daily/20220723/) row 6",
     "date": "20220723",
     "text": "Lêng-chēng-hái",
     "pieces": [
@@ -554,6 +749,7 @@
     ]
    },
    {
+    "where": "[20220814](https://apod.tw/daily/20220814/) row 8",
     "date": "20220814",
     "text": "bî-tiōng-le̍k thàu-kiàⁿ-hāu-èng",
     "pieces": [
@@ -561,6 +757,7 @@
     ]
    },
    {
+    "where": "[20220816](https://apod.tw/daily/20220816/) row 5",
     "date": "20220816",
     "text": "Ing-sian-tsō liû-tshinn-hō͘lta Lâm Liû-tshinn-hōo",
     "pieces": [
@@ -568,6 +765,7 @@
     ]
    },
    {
+    "where": "[20220827](https://apod.tw/daily/20220827/) row 1",
     "date": "20220827",
     "text": "IC ngô͘-it-sù-lio̍k",
     "pieces": [
@@ -575,6 +773,15 @@
     ]
    },
    {
+    "where": "[20220902](https://apod.tw/daily/20220902/) title",
+    "date": "20220902",
+    "text": "M̂1: O-lûn-sing-hē",
+    "pieces": [
+     "M̂1"
+    ]
+   },
+   {
+    "where": "[20220908](https://apod.tw/daily/20220908/) row 2",
     "date": "20220908",
     "text": "Thê-ô͘-seng-hûn",
     "pieces": [
@@ -582,6 +789,7 @@
     ]
    },
    {
+    "where": "[20220908](https://apod.tw/daily/20220908/) row 5",
     "date": "20220908",
     "text": "sàng-sò͘",
     "pieces": [
@@ -589,6 +797,15 @@
     ]
    },
    {
+    "where": "[20220913](https://apod.tw/daily/20220913/) title",
+    "date": "20220913",
+    "text": "Thài-iông bīn-téng ê Tn̂g-chôa-hêng Thài-iông-si",
+    "pieces": [
+     "chôa"
+    ]
+   },
+   {
+    "where": "[20220921](https://apod.tw/daily/20220921/) row 3",
     "date": "20220921",
     "text": "seng-chè-thô͘-hún-hûn",
     "pieces": [
@@ -597,6 +814,7 @@
     ]
    },
    {
+    "where": "[20220921](https://apod.tw/daily/20220921/) row 7",
     "date": "20220921",
     "text": "La̍h-hō͘-chō Sigma",
     "pieces": [
@@ -605,6 +823,7 @@
     ]
    },
    {
+    "where": "[20220929](https://apod.tw/daily/20220929/) row 3",
     "date": "20220929",
     "text": "Khin-hîng I-tà-lī Sió-kiânn-tshinn Sîng-siōng Li̍p-hong-Uē-tshnn",
     "pieces": [
@@ -612,6 +831,7 @@
     ]
    },
    {
+    "where": "[20221001](https://apod.tw/daily/20221001/) row 5",
     "date": "20221001",
     "text": "goe̍h-îⁿ",
     "pieces": [
@@ -619,6 +839,7 @@
     ]
    },
    {
+    "where": "[20221006](https://apod.tw/daily/20221006/) row 7",
     "date": "20221006",
     "text": "seng-hē-phōaⁿ",
     "pieces": [
@@ -626,6 +847,7 @@
     ]
    },
    {
+    "where": "[20221009](https://apod.tw/daily/20221009/) row 4",
     "date": "20221009",
     "text": "lia̍p-chú",
     "pieces": [
@@ -633,6 +855,7 @@
     ]
    },
    {
+    "where": "[20221102](https://apod.tw/daily/20221102/) row 3",
     "date": "20221102",
     "text": "ji̍t-jíⁿ",
     "pieces": [
@@ -640,6 +863,15 @@
     ]
    },
    {
+    "where": "[20221103](https://apod.tw/daily/20221103/) title",
+    "date": "20221103",
+    "text": "M̀3: Sann-kak-tsō sing-hē",
+    "pieces": [
+     "M̀3"
+    ]
+   },
+   {
+    "where": "[20221105](https://apod.tw/daily/20221105/) row 12",
     "date": "20221105",
     "text": "BICEP Bōng-oán-kiàⁿ",
     "pieces": [
@@ -647,6 +879,7 @@
     ]
    },
    {
+    "where": "[20221107](https://apod.tw/daily/20221107/) row 10",
     "date": "20221107",
     "text": "Kok-chè Ōaⁿ-ji̍t-sòaⁿ",
     "pieces": [
@@ -656,6 +889,7 @@
     ]
    },
    {
+    "where": "[20221112](https://apod.tw/daily/20221112/) row 1",
     "date": "20221112",
     "text": "goe̍h-choân-si̍t",
     "pieces": [
@@ -663,6 +897,7 @@
     ]
    },
    {
+    "where": "[20221118](https://apod.tw/daily/20221118/) row 4",
     "date": "20221118",
     "text": "guân-hîng-tshinn puânnd",
     "pieces": [
@@ -670,6 +905,7 @@
     ]
    },
    {
+    "where": "[20221121](https://apod.tw/daily/20221121/) row 5",
     "date": "20221121",
     "text": "chí-gōa-kng",
     "pieces": [
@@ -677,6 +913,7 @@
     ]
    },
    {
+    "where": "[20221230](https://apod.tw/daily/20221230/) row 11",
     "date": "20221230",
     "text": "sī-sòaⁿMessier sì-tsa̍p-gōo",
     "pieces": [
@@ -684,6 +921,7 @@
     ]
    },
    {
+    "where": "[20230118](https://apod.tw/daily/20230118/) row 1",
     "date": "20230118",
     "text": "James Webb Thài-khong bōng-oán-kiàⁿ",
     "pieces": [
@@ -691,6 +929,7 @@
     ]
    },
    {
+    "where": "[20230202](https://apod.tw/daily/20230202/) row 9",
     "date": "20230202",
     "text": "guân-chú",
     "pieces": [
@@ -698,6 +937,15 @@
     ]
    },
    {
+    "where": "[20230402](https://apod.tw/daily/20230402/) title",
+    "date": "20230402",
+    "text": "M̂7: Hubble Thài-khong-bōng-uán-kiànn hip--ê Khuân-hîng-sing-hûn",
+    "pieces": [
+     "M̂7"
+    ]
+   },
+   {
+    "where": "[20230425](https://apod.tw/daily/20230425/) row 7",
     "date": "20230425",
     "text": "chit-chú",
     "pieces": [
@@ -705,6 +953,7 @@
     ]
    },
    {
+    "where": "[20230503](https://apod.tw/daily/20230503/) row 14",
     "date": "20230503",
     "text": "Sū-kiāⁿ-sī-kài Bōng-oán-kiàⁿ",
     "pieces": [
@@ -713,6 +962,7 @@
     ]
    },
    {
+    "where": "[20230505](https://apod.tw/daily/20230505/) row 11",
     "date": "20230505",
     "text": "bín-kám-tō͘",
     "pieces": [
@@ -720,6 +970,7 @@
     ]
    },
    {
+    "where": "[20230622](https://apod.tw/daily/20230622/) row 7",
     "date": "20230622",
     "text": "hun-chú-hûn hok-ha̍p-thé",
     "pieces": [
@@ -727,6 +978,7 @@
     ]
    },
    {
+    "where": "[20230629](https://apod.tw/daily/20230629/) row 4",
     "date": "20230629",
     "text": "tiōng-li̍k-photiōng-li̍k-pho",
     "pieces": [
@@ -734,6 +986,23 @@
     ]
    },
    {
+    "where": "[20230729](https://apod.tw/daily/20230729/) title",
+    "date": "20230729",
+    "text": "A-pho-lô 11 hō: Ū khì hō͘ Ji̍t-kng tsiò--tio̍h",
+    "pieces": [
+     "hō͘"
+    ]
+   },
+   {
+    "where": "[20230920](https://apod.tw/daily/20230920/) title",
+    "date": "20230920",
+    "text": "Tī iâu-uán Hē-guā-kiâⁿ-tshinn tshuē-tio̍h ê Kah-uân",
+    "pieces": [
+     "kiâⁿ"
+    ]
+   },
+   {
+    "where": "[20231009](https://apod.tw/daily/20231009/) row 7",
     "date": "20231009",
     "text": "lji̍t-tsuân-si̍t",
     "pieces": [
@@ -741,6 +1010,7 @@
     ]
    },
    {
+    "where": "[20231020](https://apod.tw/daily/20231020/) row 17",
     "date": "20231020",
     "text": "NGC sù-jī-ngó͘-pat",
     "pieces": [
@@ -748,6 +1018,7 @@
     ]
    },
    {
+    "where": "[20231026](https://apod.tw/daily/20231026/) row 5",
     "date": "20231026",
     "text": "thô͘-hún-lia̍p",
     "pieces": [
@@ -755,6 +1026,7 @@
     ]
    },
    {
+    "where": "[20231110](https://apod.tw/daily/20231110/) row 13",
     "date": "20231110",
     "text": "hoat-siā-sòaⁿ",
     "pieces": [
@@ -762,6 +1034,7 @@
     ]
    },
    {
+    "where": "[20231112](https://apod.tw/daily/20231112/) row 2",
     "date": "20231112",
     "text": "gue̍h-îⁿ",
     "pieces": [
@@ -769,6 +1042,7 @@
     ]
    },
    {
+    "where": "[20231127](https://apod.tw/daily/20231127/) row 18",
     "date": "20231127",
     "text": "hun-chú-hûn",
     "pieces": [
@@ -776,6 +1050,7 @@
     ]
    },
    {
+    "where": "[20231212](https://apod.tw/daily/20231212/) row 4",
     "date": "20231212",
     "text": "Sian-lú-chō Seng-hē",
     "pieces": [
@@ -783,6 +1058,7 @@
     ]
    },
    {
+    "where": "[20231220](https://apod.tw/daily/20231220/) row 13",
     "date": "20231220",
     "text": "thài-iông-hô͘",
     "pieces": [
@@ -790,6 +1066,7 @@
     ]
    },
    {
+    "where": "[20240102](https://apod.tw/daily/20240102/) row 1",
     "date": "20240102",
     "text": "hóe-chìⁿ",
     "pieces": [
@@ -797,6 +1074,7 @@
     ]
    },
    {
+    "where": "[20240124](https://apod.tw/daily/20240124/) row 2",
     "date": "20240124",
     "text": "La̍h-hō͘-chō ke-khì-lâng thài-khong-tsûn",
     "pieces": [
@@ -805,6 +1083,7 @@
     ]
    },
    {
+    "where": "[20240416](https://apod.tw/daily/20240416/) row 5",
     "date": "20240416",
     "text": "chìn-pho",
     "pieces": [
@@ -812,6 +1091,7 @@
     ]
    },
    {
+    "where": "[20240425](https://apod.tw/daily/20240425/) row 7",
     "date": "20240425",
     "text": "La̍h-hō͘-tsō Sing-hûn",
     "pieces": [
@@ -819,6 +1099,7 @@
     ]
    },
    {
+    "where": "[20240426](https://apod.tw/daily/20240426/) row 3",
     "date": "20240426",
     "text": "Sai-á-chō it",
     "pieces": [
@@ -826,6 +1107,7 @@
     ]
    },
    {
+    "where": "[20240503](https://apod.tw/daily/20240503/) row 2",
     "date": "20240503",
     "text": "Chuí-tshenn",
     "pieces": [
@@ -833,6 +1115,7 @@
     ]
    },
    {
+    "where": "[20240506](https://apod.tw/daily/20240506/) row 1",
     "date": "20240506",
     "text": "ji̍t-choân-si̍t",
     "pieces": [
@@ -840,6 +1123,7 @@
     ]
    },
    {
+    "where": "[20240511](https://apod.tw/daily/20240511/) row 8",
     "date": "20240511",
     "text": "ji̍t-chuân-si̍t",
     "pieces": [
@@ -847,6 +1131,7 @@
     ]
    },
    {
+    "where": "[20240604](https://apod.tw/daily/20240604/) row 3",
     "date": "20240604",
     "text": "lī-chú bóe-liu",
     "pieces": [
@@ -854,6 +1139,7 @@
     ]
    },
    {
+    "where": "[20240624](https://apod.tw/daily/20240624/) row 1",
     "date": "20240624",
     "text": "JADES GS z cha̍p-sì chi khòng",
     "pieces": [
@@ -861,6 +1147,7 @@
     ]
    },
    {
+    "where": "[20240624](https://apod.tw/daily/20240624/) row 5",
     "date": "20240624",
     "text": "âng-î z tíg-î tsa̍p-sì tiám sam-jī",
     "pieces": [
@@ -868,6 +1155,7 @@
     ]
    },
    {
+    "where": "[20240720](https://apod.tw/daily/20240720/) row 6",
     "date": "20240720",
     "text": "Lêng-chēng-hái",
     "pieces": [
@@ -875,6 +1163,7 @@
     ]
    },
    {
+    "where": "[20240723](https://apod.tw/daily/20240723/) row 6",
     "date": "20240723",
     "text": "kńg-lê-á-chn̄g",
     "pieces": [
@@ -882,6 +1171,7 @@
     ]
    },
    {
+    "where": "[20240730](https://apod.tw/daily/20240730/) row 1",
     "date": "20240730",
     "text": "kāu-hō͘-chok-iōng seng-hē",
     "pieces": [
@@ -889,6 +1179,7 @@
     ]
    },
    {
+    "where": "[20240819](https://apod.tw/daily/20240819/) row 1",
     "date": "20240819",
     "text": "IC ngô͘-it-sù-lio̍k",
     "pieces": [
@@ -896,6 +1187,7 @@
     ]
    },
    {
+    "where": "[20240913](https://apod.tw/daily/20240913/) row 10",
     "date": "20240913",
     "text": "La̍h-hō͘-tsō Sing-hûn",
     "pieces": [
@@ -903,6 +1195,7 @@
     ]
    },
    {
+    "where": "[20241008](https://apod.tw/daily/20241008/) row 3",
     "date": "20241008",
     "text": "ji̍t-chuân-si̍t",
     "pieces": [
@@ -910,6 +1203,7 @@
     ]
    },
    {
+    "where": "[20241103](https://apod.tw/daily/20241103/) row 4",
     "date": "20241103",
     "text": "kńg-lê-á-chn̄g",
     "pieces": [
@@ -917,6 +1211,7 @@
     ]
    },
    {
+    "where": "[20250120](https://apod.tw/daily/20250120/) row 9",
     "date": "20250120",
     "text": "Chuí-tshenn",
     "pieces": [
@@ -924,6 +1219,7 @@
     ]
    },
    {
+    "where": "[20250202](https://apod.tw/daily/20250202/) row 8",
     "date": "20250202",
     "text": "Chuí-tshenn",
     "pieces": [
@@ -931,6 +1227,15 @@
     ]
    },
    {
+    "where": "[20250327](https://apod.tw/daily/20250327/) title",
+    "date": "20250327",
+    "text": "Messier pueh-cha̍p-it",
+    "pieces": [
+     "cha̍p"
+    ]
+   },
+   {
+    "where": "[20250419](https://apod.tw/daily/20250419/) row 3",
     "date": "20250419",
     "text": "kńg-lê-á-chn̄g",
     "pieces": [
@@ -938,6 +1243,7 @@
     ]
    },
    {
+    "where": "[20250623](https://apod.tw/daily/20250623/) row 3",
     "date": "20250623",
     "text": "Sian-hāu-chò",
     "pieces": [
@@ -945,18 +1251,39 @@
     ]
    },
    {
+    "where": "[20250721](https://apod.tw/daily/20250721/) row 7",
     "date": "20250721",
     "text": "âng-gōa-sòaⁿ",
     "pieces": [
      "sòaⁿ"
+    ]
+   },
+   {
+    "where": "[20250908](https://apod.tw/daily/20250908/) title",
+    "date": "20250908",
+    "text": "IRAS 04302: Hôo-tia̍p-puânn ê Hhêng-tshinn Hîng-sîng",
+    "pieces": [
+     "Hhêng"
     ]
    }
   ],
   "multi_tone": [],
   "caron": [
    {
+    "where": "[20230519](https://apod.tw/daily/20230519/) title KipUnicode",
+    "text": "Khiû-môo ê Kńg-lê-á Sing-hē M̌3"
+   },
+   {
     "where": "[20250401](https://apod.tw/daily/20250401/) row 4 KipUnicode",
     "text": "tē-pîng-sǔn"
+   },
+   {
+    "where": "[20250522](https://apod.tw/daily/20250522/) title KipUnicode",
+    "text": "Khiû-môo ê Kńg-lê-á Sing-hē M̌3"
+   },
+   {
+    "where": "[20250624](https://apod.tw/daily/20250624/) title PojUnicode",
+    "text": "Kńg-lê-á Seng-hē M̌1 ê tiong-sim"
    }
   ]
  },
